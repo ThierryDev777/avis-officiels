@@ -1,0 +1,28 @@
+.title {
+    color:#1FC8F9;
+}
+
+.row_style {
+    background-color:#C9EFFA;
+    padding-top:30px;
+    padding-bottom:50px;
+}
+
+.form_style {
+    width:100%;
+    border: 1px solid #1AC2F4;
+    height: 40px;
+}
+
+.btn_styles {
+    padding-left:30px;
+    padding-right:30px;
+    border-radius: 70px;
+}
+
+.col_api_styles {
+    background-color:#C9EFFA;
+    padding-top:30px;
+    padding-bottom:50px;
+    padding-left:30px;
+}

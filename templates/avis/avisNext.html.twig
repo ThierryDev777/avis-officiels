@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block title_header %}<h1 class="text-center">Faites entendre votre voix</h1>{% endblock %}
+
+{% block body %}
+<link href="{{ asset('css/avis.css') }}" rel="stylesheet">
+    <div class="container">
+        <div class="row">
+                <div class="col-md-12">
+                    <h3>Rédigez votre avis sur "Logo"</h3> <br>
+                    <p>Votre compte a été créé sur Avis-officiels.com<br>
+                    Nous vous invitons maintenant à fournir votre avis sur la marque ou le produit de votre choix</p> <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <b class="">Nom ou service à noter</b><br>
+                            {{ form_start(form.product) }}
+                            {{ form_widget(form.product) }}
+                             <br> <br>
+                        </div>
+                        <div class="col-md-4">
+        
+                            <b class="">Titre de votre avis</b><br>
+                            {{ form_start(form.title) }}
+                            {{ form_widget(form.title) }}
+                        </div>
+                    </div>
+                 </div>
+                 <div class="row">
+                    <div class="col-md-8">
+                     <br>
+                        <b class="">Décriver votre avis</b><br>
+                        {{ form_start(form.content) }}
+                        {{ form_widget(form.content) }}<br>
+
+                        <b class="">Note</b><br>
+                        {{ form_start(form.note) }}
+                        {{ form_widget(form.note) }}<br><br>
+
+                        <button type="submit" class="btn btn-primary btn_styles">SOUMETTRE L'AVIS</button>
+                        {{ form_end(form) }}
+                    </div>
+                 </div>
+               
+        </div>
+    </div>
+{% endblock %}

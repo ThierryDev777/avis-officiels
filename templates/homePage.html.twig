@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block title_header %} <h1 class="text-center">Consultez les avis de vos marques préférée.</h1>{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <h3>Tous les avis sur "Logo"</h3> <br>
+            {% for avis in avis %}
+            <div class="case_avis">
+                {{ avis.note }} <br>
+                <b>"{{ avis.title }}"</b>
+                <p>{{ avis.content }}</p>
+                <p>Publié le {{ avis.datetime |date('d-m-Y h:m') }} par <b>{{ avis.author.name }}</b></p>
+            </div> <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

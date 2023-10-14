@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+{% block navbar %}{% endblock %}
+{% block header %}{% endblock %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="">
+    <div class="column_liste_avis">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="">Liste des marques</h3> <br>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Société</th>
+                        <th scope="col">Site web</th>
+                        <th scope="col">Téléphone</th>
+                        <th scope="col">E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">1</th>
+                        {% for marque in marque %}
+                        <td>{{marque.name}}</td>
+                        {% endfor %}
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

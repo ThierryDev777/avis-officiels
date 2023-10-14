@@ -1,0 +1,39 @@
+.column_liste_avis {
+    padding-left:50px;
+    padding-right:50px;
+    margin-top:50px;
+}
+
+.form_style {
+    width:100%;
+    border: 1px solid #1AC2F4;
+    height: 40px;
+}
+
+.label_style {
+    margin-bottom:10px;
+}
+
+.btn_styles {
+    padding-left:30px;
+    padding-right:30px;
+    border-radius: 70px;
+}
+
+.form_style_textarea {
+    width:100%;
+    border: 1px solid #1AC2F4;
+    height:120px;
+}
+
+#example_filter {
+    float:right !important;
+}
+
+#example_paginate {
+    float:right !important;
+}
+
+.tab-content {
+    width:100% !important;
+}
