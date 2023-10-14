@@ -37,3 +37,14 @@
 .tab-content {
     width:100% !important;
 }
+
+
+.style_attente {
+    background-color: yellow;
+    padding:5px;
+    border-radius: 5px;
+}
+
+.col_style_padding {
+    padding-top:10px;
+}

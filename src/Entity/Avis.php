@@ -37,6 +37,9 @@ class Avis
     #[ORM\JoinColumn(nullable: false)]
     private ?Marques $marque = null;
 
+    #[ORM\Column]
+    private ?bool $etat = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -122,6 +125,18 @@ class Avis
     public function setMarque(?Marques $marque): static
     {
         $this->marque = $marque;
+
+        return $this;
+    }
+
+    public function isEtat(): ?bool
+    {
+        return $this->etat;
+    }
+
+    public function setEtat(bool $etat): static
+    {
+        $this->etat = $etat;
 
         return $this;
     }

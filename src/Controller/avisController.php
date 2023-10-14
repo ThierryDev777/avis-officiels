@@ -47,6 +47,7 @@ class avisController extends AbstractController {
             $avis->setAuthor($author_id);
             $avis->setMarque($marque_id);
             $avis->setDatetime(new \DateTime());
+            $avis->setEtat(0);
             $em->persist($avis);
             $em->flush();
 
