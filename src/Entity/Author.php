@@ -6,7 +6,6 @@ use App\Repository\AuthorRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\DBAL\Types\Types;
 
 #[ORM\Entity(repositoryClass: AuthorRepository::class)]
 class Author
@@ -24,14 +23,9 @@ class Author
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $birthday = null;
-
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $pseudo = null;
 
     #[ORM\OneToMany(mappedBy: 'author', targetEntity: Avis::class)]
     private Collection $avis;
@@ -58,17 +52,6 @@ class Author
         return $this;
     }
 
-    public function getBirthday(): ?\DateTimeInterface
-    {
-        return $this->birthday;
-    }
-
-    public function setBirthday(\DateTimeInterface $birthday): static
-    {
-        $this->birthday = $birthday;
-
-        return $this;
-    }
 
     public function getEmail(): ?string
     {
@@ -82,17 +65,6 @@ class Author
         return $this;
     }
 
-    public function getPseudo(): ?string
-    {
-        return $this->pseudo;
-    }
-
-    public function setPseudo(string $pseudo): static
-    {
-        $this->pseudo = $pseudo;
-
-        return $this;
-    }
 
     /**
      * @return Collection<int, Avis>

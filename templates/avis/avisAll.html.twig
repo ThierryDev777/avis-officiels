@@ -52,14 +52,18 @@
                                 <td style="padding-top:18px;">{{ avis.product }} </td>
                                 <td style="padding-top:18px;">{{ avis.note }} </td>
                                 <td style="padding-top:18px;">{{ avis.title }} </td>
-                                <td style="padding-top:18px;">{{ avis.content }} </td>
+                                <td style="padding-top:18px;width:300px !important;">{{ avis.content }} </td>
                                 <td style="padding-top:18px;">{{ avis.datetime |date('d-m-Y h:m') }} </td>
                                 <td style="padding-top:18px;">
                                 {% if avis.etat == 0 %}
                                     <b class="style_attente">En attente</b>
                                 {% endif %}
                                 </td>
-                                <td><a href="{{ path('avis_update', {avis_id: avis.id}) }}" class="btn btn-success">Modifier le contenu</a> </td>
+                                <td>
+                                <a href="" class="btn btn-success">Valider</a>
+                                <a href="{{ path('avis_update', {avis_id: avis.id}) }}" class="btn btn-success">Répondre</a> 
+                                <a href="" class="btn btn-danger">Supprimer</a>
+                                </td>
                                 </tr>
                             {% endfor %}
                             </tbody>

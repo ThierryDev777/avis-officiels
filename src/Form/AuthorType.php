@@ -18,18 +18,7 @@ class AuthorType extends AbstractType
                 'attr' => [
                     'class' => 'form_style'
                 ]])
-            ->add('birthday',DateType::class, [
-                'widget' => 'single_text',
-                'format' => 'yyyy-MM-dd',
-                'attr' => [
-                    'class' => 'form_style',
-                    'style' => 'line-height: 20px;'
-                ]])
             ->add('email',TextType::class, [
-                'attr' => [
-                    'class' => 'form_style'
-                ]])
-            ->add('pseudo',TextType::class, [
                 'attr' => [
                     'class' => 'form_style'
                 ]])

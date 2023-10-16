@@ -19,7 +19,11 @@ class AvisType extends AbstractType
                 'attr' => [
                     'class' => 'form_style'
                 ]])
-            ->add('note')
+            ->add('note', TextType::class, [
+                'attr' => [
+                    'class' => 'opacity_note'
+                ]
+            ])
             ->add('title',TextType::class, [
                 'attr' => [
                     'class' => 'form_style'

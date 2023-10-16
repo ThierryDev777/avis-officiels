@@ -48,3 +48,14 @@
 .col_style_padding {
     padding-top:10px;
 }
+
+.opacity_note { 
+    opacity:0;
+}
+
+.etoile {
+    opacity:0.5;
+}
+.etoile:hover {
+    opacity:1;
+}

@@ -11,14 +11,14 @@
                     Nous vous invitons maintenant à fournir votre avis sur la marque ou le produit de votre choix</p> <br>
                     <div class="row">
                         <div class="col-md-4">
-                            <b class="">Nom ou service à noter</b><br>
+                            <b class="">Produit ou service concerné</b><br>
                             {{ form_start(form.product) }}
                             {{ form_widget(form.product) }}
                              <br> <br>
                         </div>
                         <div class="col-md-4">
         
-                            <b class="">Titre de votre avis</b><br>
+                            <b class="">Titre</b><br>
                             {{ form_start(form.title) }}
                             {{ form_widget(form.title) }}
                         </div>
@@ -27,12 +27,17 @@
                  <div class="row">
                     <div class="col-md-8">
                      <br>
-                        <b class="">Décriver votre avis</b><br>
+                        <b class="">Partagez votre expérience</b><br>
                         {{ form_start(form.content) }}
-                        {{ form_widget(form.content) }}<br>
+                        {{ form_widget(form.content) }}<br><br>
 
                         <b class="">Note</b><br>
                         {{ form_start(form.note) }}
+                        <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_1" onclick="etoile_un_function()" style="width:30px;">
+                        <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_2" onclick="etoile_deux_function()" style="width:30px;">
+                        <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_3" onclick="etoile_trois_function()" style="width:30px;">
+                        <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_4" onclick="etoile_quatre_function()" style="width:30px;">
+                        <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_5" onclick="etoile_cinq_function()" style="width:30px;"> 
                         {{ form_widget(form.note) }}<br><br>
 
                         <button type="submit" class="btn btn-primary btn_styles">SOUMETTRE L'AVIS</button>
@@ -42,4 +47,54 @@
                
         </div>
     </div>
+    <script>
+        var etoile_1 = document.getElementById("etoile_1");
+        var champ_note = document.getElementById("avis_note");
+        etoile_1.classList.add('etoile');
+        etoile_2.classList.add('etoile');
+        etoile_3.classList.add('etoile');
+        etoile_4.classList.add('etoile');
+        etoile_5.classList.add('etoile');
+        function etoile_un_function() {
+            etoile_1.classList.remove('etoile');
+            etoile_2.classList.add('etoile');
+            etoile_3.classList.add('etoile');
+            etoile_4.classList.add('etoile');
+            etoile_5.classList.add('etoile');
+            champ_note.value = 1;
+        }
+        function etoile_deux_function() {
+            etoile_1.classList.remove('etoile');
+            etoile_2.classList.remove('etoile');
+            etoile_3.classList.add('etoile');
+            etoile_4.classList.add('etoile');
+            etoile_5.classList.add('etoile');
+            champ_note.value = 2;
+        }
+        function etoile_trois_function() {
+            etoile_1.classList.remove('etoile');
+            etoile_2.classList.remove('etoile');
+            etoile_3.classList.remove('etoile');
+            etoile_4.classList.add('etoile');
+            etoile_5.classList.add('etoile');
+            champ_note.value = 3;
+        }
+        function etoile_quatre_function() {
+            etoile_1.classList.remove('etoile');
+            etoile_2.classList.remove('etoile');
+            etoile_3.classList.remove('etoile');
+            etoile_4.classList.remove('etoile');
+            etoile_5.classList.add('etoile');
+            champ_note.value = 4;
+        }
+        function etoile_cinq_function() {
+            etoile_1.classList.remove('etoile');
+            etoile_2.classList.remove('etoile');
+            etoile_3.classList.remove('etoile');
+            etoile_4.classList.remove('etoile');
+            etoile_5.classList.remove('etoile');
+            champ_note.value = 5;
+        }
+
+    </script>
 {% endblock %}

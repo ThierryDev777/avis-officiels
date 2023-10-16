@@ -29,7 +29,7 @@ class avisController extends AbstractController {
 
             $authorId= $author->getId();
 
-            return $this->redirect('https://127.0.0.1:8000/avis-next/1/'.$authorId);
+            return $this->redirect('https://127.0.0.1:8000/avis-next/'.$marque.'/'.$authorId);
         }
         return $this->render('avis/avis.html.twig', [
             'form' => $form->createView()
