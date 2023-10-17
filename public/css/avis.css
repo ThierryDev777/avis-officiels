@@ -14,6 +14,10 @@
     margin-bottom:10px;
 }
 
+.style_tab {
+    height:100%;
+}
+
 .btn_styles {
     padding-left:30px;
     padding-right:30px;
@@ -45,6 +49,22 @@
     border-radius: 5px;
 }
 
+.style_valide {
+    background-color: #58FF71;
+    padding:5px;
+    border-radius: 5px;
+}
+
+.style_Repondu {
+    background-color: #BBBBBB;
+    padding-left:13px;
+    padding-right:13px;
+    padding-top:5px;
+    padding-bottom:5px;
+    border-radius: 5px;
+    margin-top:10px;
+}
+
 .col_style_padding {
     padding-top:10px;
 }
@@ -58,4 +78,17 @@
 }
 .etoile:hover {
     opacity:1;
+}
+
+.para_footer {
+    position:fixed;
+    bottom:0;
+    margin-bottom:0px;
+    font-size: 13px;
+    background-color: yellow;
+    height:20px;
+    width:100%;
+    padding-left:20px;
+    padding-top:10px;
+    padding-bottom:30px;
 }

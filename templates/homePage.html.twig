@@ -8,14 +8,63 @@
             <h3>Tous les avis sur "Logo"</h3> <br>
             {% for avis in avis %}
             <div class="case_avis">
-                {{ avis.note }} <br>
+                {% if avis.note == 1 %}
+                    <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_1" onclick="etoile_un_function()" style="width:30px;">
+                {% elseif avis.note == 2 %}
+                    <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_1" onclick="etoile_un_function()" style="width:30px;">
+                      <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_1" onclick="etoile_un_function()" style="width:30px;">
+                {% elseif avis.note == 3 %}
+                    <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_1" onclick="etoile_un_function()" style="width:30px;">
+                    <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_1" onclick="etoile_un_function()" style="width:30px;">
+                    <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_1" onclick="etoile_un_function()" style="width:30px;">
+                {% elseif avis.note == 4 %}
+                    <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_1" onclick="etoile_un_function()" style="width:30px;">
+                    <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_1" onclick="etoile_un_function()" style="width:30px;">
+                    <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_1" onclick="etoile_un_function()" style="width:30px;">
+                    <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_1" onclick="etoile_un_function()" style="width:30px;">
+                {% elseif avis.note == 5 %}
+                    <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_1" onclick="etoile_un_function()" style="width:30px;">
+                    <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_2" onclick="etoile_deux_function()" style="width:30px;">
+                    <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_3" onclick="etoile_trois_function()" style="width:30px;">
+                    <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_4" onclick="etoile_quatre_function()" style="width:30px;">
+                    <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_5" onclick="etoile_cinq_function()" style="width:30px;">  
+                {% endif %} <br>
+                 <br>
                 <b>"{{ avis.title }}"</b>
                 <p>{{ avis.content }}</p>
-                <p>Publié le {{ avis.datetime |date('d-m-Y h:m') }} par <b>{{ avis.author.name }}</b></p>
+                <p><span style="opacity:0.5;">Publié le {{ avis.datetime |date('d-m-Y h:m') }}</span> par <b>{{ avis.author.name }}</b></p>
+                <div class="comment">
+                    {% if avis.comments %}
+                    <b class="reponse_view_style" id="response_view" onclick="responseView()">1 Réponse</b> <br>
+                    <div class="commentaire_style" id="response">
+                        <b>{{ marque.name }}</b> <br>
+                        {% if avis.comments %}
+                            {{ avis.comments.content }}
+                        {% endif %}
+                    </div>
+                    {% else %}
+                    <b>0 Réponse</b>
+                    {% endif %}
+                </div>
             </div> <br>
             {% endfor %}
         </div>
     </div>
 </div>
+<script>
+    var response_view = document.getElementById('response_view');
+    var response = document.getElementById('response');
 
+    response.style.display ="none";
+
+    function responseView() {
+        if(response.style.display =="none") {
+            response.style.display ="block";
+        } else {
+            response.style.display ="none";
+        }
+         
+    }
+
+</script>
 {% endblock %}

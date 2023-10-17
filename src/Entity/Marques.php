@@ -41,9 +41,13 @@ class Marques
     #[ORM\OneToMany(mappedBy: 'marque', targetEntity: Avis::class)]
     private Collection $avis;
 
+    #[ORM\OneToMany(mappedBy: 'marque', targetEntity: Comments::class, orphanRemoval: true)]
+    private Collection $comments;
+
     public function __construct()
     {
         $this->avis = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -147,6 +151,36 @@ class Marques
             // set the owning side to null (unless already changed)
             if ($avi->getMarque() === $this) {
                 $avi->setMarque(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Comments>
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comments $comment): static
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments->add($comment);
+            $comment->setMarque($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comments $comment): static
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getMarque() === $this) {
+                $comment->setMarque(null);
             }
         }
 

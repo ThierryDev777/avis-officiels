@@ -9,6 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: AvisRepository::class)]
 class Avis
 {
+    public function __toString()
+    {
+        return $this->id;
+    }
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -39,6 +44,9 @@ class Avis
 
     #[ORM\Column]
     private ?bool $etat = null;
+
+    #[ORM\OneToOne(mappedBy: 'avis', cascade: ['persist', 'remove'])]
+    private ?Comments $comments = null;
 
     public function getId(): ?int
     {
@@ -140,4 +148,22 @@ class Avis
 
         return $this;
     }
+
+    public function getComments(): ?Comments
+    {
+        return $this->comments;
+    }
+
+    public function setComments(Comments $comments): static
+    {
+        // set the owning side of the relation if necessary
+        if ($comments->getAvis() !== $this) {
+            $comments->setAvis($this);
+        }
+
+        $this->comments = $comments;
+
+        return $this;
+    }
+
 }
