@@ -38,11 +38,17 @@ class Marques
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $password = null;
+
     #[ORM\OneToMany(mappedBy: 'marque', targetEntity: Avis::class)]
     private Collection $avis;
 
     #[ORM\OneToMany(mappedBy: 'marque', targetEntity: Comments::class, orphanRemoval: true)]
     private Collection $comments;
+
+    #[ORM\OneToOne(mappedBy: 'marque', cascade: ['persist', 'remove'])]
+    private ?Logo $logo = null;
 
     public function __construct()
     {
@@ -127,6 +133,19 @@ class Marques
         return $this;
     }
 
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): static
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+
     /**
      * @return Collection<int, Avis>
      */
@@ -183,6 +202,23 @@ class Marques
                 $comment->setMarque(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getLogo(): ?Logo
+    {
+        return $this->logo;
+    }
+
+    public function setLogo(Logo $logo): static
+    {
+        // set the owning side of the relation if necessary
+        if ($logo->getMarque() !== $this) {
+            $logo->setMarque($this);
+        }
+
+        $this->logo = $logo;
 
         return $this;
     }

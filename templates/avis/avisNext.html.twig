@@ -1,5 +1,12 @@
 {% extends 'base.html.twig' %}
 {% block title_header %}<h1 class="text-center">Faites entendre votre voix</h1>{% endblock %}
+{% block logo %}
+    {% for logo in logo %}
+        <a class="navbar-brand logo" href="{{ path('home', {marque: app.request.get('marque')}) }}">
+            <img src="{{ asset('uploads/' ~ logo.name) }}" class="logo">
+        </a>
+    {% endfor %}
+{% endblock %}
 
 {% block body %}
 <link href="{{ asset('css/avis.css') }}" rel="stylesheet">
@@ -40,7 +47,7 @@
                         <img src="{{ asset('img/etoile_vide.png') }}" id="etoile_5" onclick="etoile_cinq_function()" style="width:30px;"> 
                         {{ form_widget(form.note) }}<br><br>
 
-                        <button type="submit" class="btn btn-primary btn_styles">SOUMETTRE L'AVIS</button>
+                        <button type="submit" class="btn btn_style_avis">SOUMETTRE L'AVIS</button>
                         {{ form_end(form) }}
                     </div>
                  </div>

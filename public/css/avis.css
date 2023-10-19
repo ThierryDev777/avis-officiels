@@ -92,3 +92,66 @@
     padding-top:10px;
     padding-bottom:30px;
 }
+
+.btn_style_avis {
+    background-color: #0582ca;
+    text-decoration:none;
+    border:none;
+    border-radius: 42px;
+    color:white;
+}
+.btn_style_avis:hover {
+    background-color: #1b8ccf !important;
+    color:white;
+}
+.btn_style_avis:active {
+    background-color: #1b8ccf !important;
+    color:white;
+}
+
+.infobulle_1 {
+    background-color: #C9EFFA;
+    padding:5px;
+    z-index: 500;
+    position: absolute;
+    margin-left:-10px;
+    margin-top: 0px;
+    display:none;
+}
+.infobulle_2 {
+    background-color: #C9EFFA;
+    padding:5px;
+    z-index: 500;
+    position: absolute;
+    margin-left:-10px;
+    margin-top: 0px;
+    display:none;
+}
+.infobulle_3 {
+    background-color: #C9EFFA;
+    padding:5px;
+    z-index: 500;
+    position: absolute;
+    margin-left:-10px;
+    margin-top: 0px;
+    display:none;
+}
+
+.icon_action {
+    width:30px;
+    height:30px;
+}
+.col_action_padding {
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.col_valider:hover > .infobulle_1 {
+    display: block;
+}
+.col_repondre:hover > .infobulle_2 {
+    display: block;
+}
+.col_supprimer:hover > .infobulle_3 {
+    display: block;
+}

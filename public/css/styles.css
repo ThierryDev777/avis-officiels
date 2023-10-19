@@ -2,13 +2,14 @@ html, body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .row {
     margin-right: -0px !important;
 }
 .header {
-    background-color: aquamarine;
+    background-image:url("../img/bg-banniere.jpg");
 }
 .col-header {
     padding-top:100px;
@@ -32,4 +33,31 @@ html, body {
 .reponse_view_style {
     opacity:0.6;
     cursor:pointer;
+}
+
+.footer {
+    background-color: #dcedff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.btn_style_avis {
+    background-color: #0582ca;
+    text-decoration:none;
+    border:none;
+    border-radius: 42px;
+    color:white;
+}
+.btn_style_avis:hover {
+    background-color: #1b8ccf !important;
+    color:white;
+}
+.btn_style_avis:active {
+    background-color: #1b8ccf !important;
+    color:white;
+}
+
+.logo {
+    height:50px;
+    width:100px;
 }

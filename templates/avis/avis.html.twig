@@ -1,12 +1,21 @@
 {% extends 'base.html.twig' %}
 {% block title_header %}<h1 class="text-center">Faites entendre votre voix</h1>{% endblock %}
+{% block logo %}
+    {% for logo in logo %}
+        <a class="navbar-brand logo" href="{{ path('home', {marque: app.request.get('marque')}) }}">
+            <img src="{{ asset('uploads/' ~ logo.name) }}" class="logo">
+        </a>
+    {% endfor %}
+{% endblock %}
 
 {% block body %}
 <link href="{{ asset('css/avis.css') }}" rel="stylesheet">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                    <h3>Rédigez votre avis sur "Logo"</h3>
+                    {% for logo in logo %}
+                           <h3>Rédigez votre avis sur <img src="{{ asset('uploads/' ~ logo.name) }}" class="logo"> </h3>
+                    {% endfor %}
                     <p>Dans un premier temps, nous vous invitons à renseigner vos informations <br> pour garantir la véracité des avis sur votre marque</p> <br><br><br>
                     <div class="row">
                         <div class="col-md-4">
@@ -25,7 +34,7 @@
                         </div>
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary btn_styles">SUIVANT</button>
+                    <button type="submit" class="btn btn_style_avis">SUIVANT</button>
                         {{ form_end(form) }}
             </div>
         </div>

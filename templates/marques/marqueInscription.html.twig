@@ -7,7 +7,7 @@
     <link href="{{ asset('css/inscription.css') }}" rel="stylesheet">
         <div class="row">
             <div class="col-md-12">
-            <br>
+            <br>    
                     <div class="row row_style">
                         <div class="row">
                             <div class="col-md-12 text-center">
@@ -25,7 +25,11 @@
 
                             <b class="">Téléphone</b><br>
                             {{ form_start(form.telephone) }}
-                            {{ form_widget(form.telephone) }}
+                            {{ form_widget(form.telephone) }} <br><br>
+
+                             <b class="">Mot de passe</b><br>
+                            {{ form_start(form.password) }}
+                            {{ form_widget(form.password) }}
                         </div>
                         <div class="col-md-4 me-auto">
                             <b class="">Prénom</b><br>
@@ -38,17 +42,12 @@
 
                             <b class="">E-mail</b><br>
                             {{ form_start(form.email) }}
-                            {{ form_widget(form.email) }}
-                        </div> 
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                            <br><br>
-                                <button type="submit" class="btn btn-primary btn_styles">Enregistrer</button>
+                            {{ form_widget(form.email) }}  <br><br><br><br><br><br>
+                            <button type="submit" class="btn btn_style_avis" style="margin-left:-70px;">Enregistrer</button>
                                 {{ form_end(form) }}
-                            </div>
-                        </div>
+                        </div> 
+                    
                     </div>
-                        
                     
             </div>
         </div>

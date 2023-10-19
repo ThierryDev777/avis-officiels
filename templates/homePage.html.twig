@@ -1,11 +1,21 @@
 {% extends 'base.html.twig' %}
-{% block title_header %} <h1 class="text-center">Consultez les avis de vos marques préférée.</h1>{% endblock %}
+{% block title_header %} <h1 class="text-center">Avis officiels - Boostez vos ventes avec les avis clients officiels</h1>{% endblock %}
+{% block logo %}
+    {% for logo in logo %}
+        <a class="navbar-brand logo" href="{{ path('home', {marque: app.request.get('marque')}) }}">
+            <img src="{{ asset('uploads/' ~ logo.name) }}" class="logo">
+        </a>
+    {% endfor %}
+{% endblock %}
 
 {% block body %}
 <div class="container">
     <div class="row">
         <div class="col-md-10">
-            <h3>Tous les avis sur "Logo"</h3> <br>
+            {% for logo in logo %}
+                <h3>Tous les avis sur <img src="{{ asset('uploads/' ~ logo.name) }}" class="logo"></h3> <br>
+            {% endfor %}
+            
             {% for avis in avis %}
             <div class="case_avis">
                 {% if avis.note == 1 %}

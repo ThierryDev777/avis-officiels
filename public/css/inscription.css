@@ -1,3 +1,10 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+    font-family: 'Quicksand', sans-serif;
+}
+
 .title {
     color:#1FC8F9;
 }
@@ -8,6 +15,11 @@
     padding-bottom:50px;
 }
 
+.inscription_style {
+    background-color:#C9EFFA;
+    
+    padding-bottom:50px;
+}
 .form_style {
     width:100%;
     border: 1px solid #1AC2F4;
@@ -25,4 +37,25 @@
     padding-top:30px;
     padding-bottom:50px;
     padding-left:30px;
+}
+
+.btn_style_avis {
+    background-color: #0582ca;
+    text-decoration:none;
+    border:none;
+    border-radius: 42px;
+    color:white;
+}
+.btn_style_avis:hover {
+    background-color: #1b8ccf !important;
+    color:white;
+}
+.btn_style_avis:active {
+    background-color: #1b8ccf !important;
+    color:white;
+}
+
+.colonne_upload_style {
+    background-color: #C9EFFA;
+    padding:40px;
 }

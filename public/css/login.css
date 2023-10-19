@@ -1,0 +1,40 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.form_style {
+    width:100%;
+    border: 1px solid #1AC2F4;
+    height: 40px;
+}
+
+.style_col_login {
+    padding:40px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px 5px #dcedff;
+    margin-top:20px;
+    height: 400px;
+}
+
+.btn_styles {
+    background-color: #0582ca;
+    text-decoration:none;
+    border:none;
+    border-radius: 42px;
+    color:white;
+}
+.btn_styles:hover {
+    background-color: #1b8ccf !important;
+    color:white;
+}
+.btn_styles:active {
+    background-color: #1b8ccf !important;
+    color:white;
+}
+
+.style_rediger_avis_texte {
+    color: #0582ca;
+}
